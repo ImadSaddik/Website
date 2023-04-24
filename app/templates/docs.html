@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/docs.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='imgs/website_logo.svg') }}">
+</head>
+<body>
+    <div>
+        <nav class="nav_home">
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='imgs/logo.svg') }}" alt="myLogo" class="logo">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('digits') }}">Digits</a></li>
+                <li><a href="{{ url_for('character') }}">Characters</a></li>
+                <li><a href="{{ url_for('words') }}">Words</a></li>
+                <li><a href="{{ url_for('docs') }}">Docs</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="container">
+        <div class="input_file">
+            <div class="file_uplod">
+                <div class="left_side_container">
+                    <img src="{{ url_for('static', filename='imgs/upload.svg') }}" alt="upload">
+                    <div class="title_hint">
+                        <h3>Drag and drop files here</h3>
+                        <h4>Only images</h4>
+                    </div>
+                </div>
+                <button id="browse_button">Browse files</button>
+            </div>
+            <div class="preview_container">
+                <img src="" alt="" id="preview_image">
+                <h4 id="preview_hint">Upload an image to get a preview</h4>
+            </div>
+        </div>
+
+        <div class="prediction">
+            <div class="prediction_container">
+                <div class="prediction_container-text">
+                    <h3>Digitalize the image with one click</h3>
+                    <h4>It takes time, so wait</h4>
+                </div>
+                <button class="predict_button" id="predict_button">Predict</button>
+            </div>
+            <p id="predict_preview" class="predict_preview"></p>
+        </div>
+    </section>
+    <script type="module" src="{{ url_for('static', filename='scripts/docs.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</body>
+</html>

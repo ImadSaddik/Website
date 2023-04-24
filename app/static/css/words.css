@@ -1,0 +1,138 @@
+@font-face {
+    font-family: RobotoCondensed;
+    src: url(../fonts/RobotoCondensed-Regular.ttf);
+}
+
+:root {
+    --primaryColorDark: #003b78;
+    --primaryColorLight: #0078f4;
+    --backGroundColorDark: #0d0d0d; 
+    --backGroundColorLight: #1a1a1a;
+    --cardsWidthHeight: 350px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: RobotoCondensed;
+}
+
+body {
+    background-color: var(--backGroundColorLight);
+}
+
+div {
+    color: white;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+}
+
+.nav_home {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--backGroundColorDark);
+    height: 3.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.logo {
+    margin-right: auto;
+    width: 120px;
+    cursor: pointer;
+}
+
+.nav_home ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav_home ul li {
+    list-style: none;
+    margin-left: 2.5rem;
+}
+
+.nav_home ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: RobotoCondensed;
+    font-size: 1rem;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_home ul li a:hover {
+    color: var(--primaryColorLight);
+}
+
+
+#myCanvas {
+    background-color: var(--backGroundColorDark);
+    width: 1024px;
+    height: 420px;
+    border-radius: 1.25rem;
+    margin: 2rem 0;
+}
+
+#predictionCanvas {
+    background-color: var(--backGroundColorDark);
+    width: 1024px;
+    height: 200px;
+    border-radius: 1.25rem;
+    margin: 1rem 0rem;
+}
+
+.predictButton {
+    background-color: var(--primaryColorDark);
+    width: 200px;
+    color: white;
+    border: none;
+    border-radius: 10rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-family: RobotoCondensed;
+    font-size: 1.25rem;
+    padding: 10px 8px 10px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.predictButton:hover {
+    background-color: var(--primaryColorLight);
+}
+
+.drawPredictSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+.canvas {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.predictDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary_color_span {
+    color: var(--primaryColorLight);
+}

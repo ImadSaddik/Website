@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwriting recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='imgs/website_logo.svg') }}">
+</head>
+<body>
+    <div>
+        <nav class="nav_home">
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='imgs/logo.svg') }}" alt="myLogo" class="logo">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('digits') }}">Digits</a></li>
+                <li><a href="{{ url_for('character') }}">Characters</a></li>
+                <li><a href="{{ url_for('words') }}">Words</a></li>
+                <li><a href="{{ url_for('docs') }}">Docs</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="video_div">
+        <div class="left_home_div">
+            <h1>Handwritten <span class="primary_color_span">text</span><br>Recognition</h1>
+            <button class="viedo_button" id="videoButton">Watch video</button>
+        </div>
+        <video class="right_home_div" id="illustration_video" loop muted>
+            <source src="{{ url_for('static', filename='videos/illustration.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        const videoButton = document.getElementById('videoButton');
+        const video = document.getElementById('illustration_video');
+    
+        videoButton.addEventListener('click', function() {
+            video.play();
+        });
+    </script>  
+</body>
+</html>

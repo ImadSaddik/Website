@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/words.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='imgs/website_logo.svg') }}">
+</head>
+<body>
+    <div>
+        <nav class="nav_home">
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='imgs/logo.svg') }}" alt="myLogo" class="logo">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('digits') }}">Digits</a></li>
+                <li><a href="{{ url_for('character') }}">Characters</a></li>
+                <li><a href="{{ url_for('words') }}">Words</a></li>
+                <li><a href="{{ url_for('docs') }}">Docs</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="drawPredictSection">
+        <div class="canvas">
+            <h1 class="canvasTitle">Canvas</h1>
+            <canvas id="myCanvas"></canvas>
+            <h4>L.click = <span class="primary_color_span">draw</span> &nbsp;&nbsp;|&nbsp;&nbsp;  
+                R.click = <span class="primary_color_span">erase</span> &nbsp;&nbsp;|&nbsp;&nbsp;  
+                Backspace = <span class="primary_color_span">delete</span> 
+            </h4>
+            <button id="predictButton" class="predictButton">Predict</button>
+        </div>
+        <div class="predictDiv">
+            <h1 id="predictText">Prediction</h1>
+        </div>
+    </section>
+    <script type="module" src="{{ url_for('static', filename='scripts/words.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</body>
+</html>
