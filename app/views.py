@@ -71,6 +71,8 @@ def predictMultiple():
             predictionString += prediction + '\n'
             predictionString = predictionString.replace('#', '')
             
+        predictionString = "NAN" if predictionString == '' else predictionString
+            
         return jsonify({'prediction': predictionString})
     
     return render_template('docs.html')

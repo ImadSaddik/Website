@@ -1,7 +1,3 @@
-import numpy as np
-import tkinter as tk
-import tkinter.filedialog as filedialog
-from PIL import ImageGrab, Image
 import pickle as pkl
 
 def load_model():
@@ -14,6 +10,5 @@ def load_model():
 def get_prediction(model, processor, image):
     pixel_values = processor(images=image, return_tensors="pt").pixel_values
     generated_ids = model.generate(pixel_values)
-    generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
-
-    return generated_text
+    
+    return processor.batch_decode(generated_ids, skip_special_tokens=True)[0]

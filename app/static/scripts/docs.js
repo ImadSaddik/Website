@@ -28,7 +28,9 @@ browseButton.addEventListener('click', function() {
 predictButton.addEventListener('click', function() {
     const formData = new FormData();
     const image = previewImage.src;
+    
     formData.append('image', image);
+    predictionTextPreview.innerHTML = '';
   
     fetch('/paragraph_prediction', {
       method: 'POST',
